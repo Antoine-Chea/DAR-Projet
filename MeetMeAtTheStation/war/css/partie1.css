@@ -1,0 +1,223 @@
+/* ============================================================================== */
+/* ================================== Partie 1 ================================== */
+/* ============================================================================== */
+#partie1 {
+   height: 625px;
+   width: 100%;
+   background-color: white;
+}
+#bandeau {
+   text-align: center;
+   height: 100px;
+   width: 100%;
+   background-color: #A9D0F5;
+   color: white;
+   margin-top: 10px;
+   margin-bottom: 15px;
+   font-size: 80px;
+   font-family: "", Times, serif;
+}
+
+.tdConnexion {
+   border-bottom:0pt solid white;
+   padding: 0px;
+   text-align: center;
+}
+
+#trInfoStation {
+	font-size: 12px;
+}
+
+#connexion {
+   float: right;
+   !background-color: black;
+   color: white;
+   margin-right: 50px;
+   padding-top: 0px;
+   font-size: 15px;
+   font-family: null;
+   text-align: left;
+   height: 80px;
+   width: 300px;
+}
+#bienvenue {
+   text-align: center;
+   font-size: 20px;
+   border:1px solid #DDD;
+   border-radius:5px;
+   -webkit-border-radius:5px;
+   -moz-border-radius:5px;
+}
+#bienvenuePseudo {
+   font-size: 13px;
+}
+#bienvenuechange {
+   font-size: 11px;
+}
+#InscriptionErreur {
+   color: red;
+}
+.espacement {
+   margin-bottom: 5px;
+}
+
+#centrage {
+   height: 500px;
+   width: 1000px;
+}
+#centrageInscription {
+   !background-color: black;
+   height: 500px;
+   width: 1000px;
+}
+#Inscription {
+   background-color: #BDBDBD;
+   color: black;
+   margin-right: 50px;
+   padding-top: 0px;
+   font-size: 15px;
+   height: 500px;
+   width: 500px;
+   border:1px solid #DDD;
+   border-radius:5px;
+   -webkit-border-radius:5px;
+   -moz-border-radius:5px;
+}
+#map {
+   height: 500px;
+   width: 800px;
+   border-radius:5px;
+   -webkit-border-radius:5px;
+   -moz-border-radius:5px;
+}
+
+#menu {
+   height: 500px;
+   width: 200px;
+   float: left;
+   !background-color: black;
+}
+#menuTitle  {
+   background-color: #BDBDBD;
+   color: white;
+   width:195px;
+   height: 25px;
+   padding-top: 5px;
+   text-align: center;
+   border:1px solid #DDD;
+   border-radius:5px;
+   -webkit-border-radius:5px;
+   -moz-border-radius:5px;
+}
+#menuItem {
+   background-color: #D8D8D8;
+   color: black;
+   width:195px;
+   min-height: 25px;
+   padding-top: 5px;
+   text-align: center;
+   border:1px solid #DDD;
+   border-radius:5px;
+   -webkit-border-radius:5px;
+   -moz-border-radius:5px;
+}
+#infoTrain {
+   color: black;
+   border-radius:5px;
+   -webkit-border-radius:5px;
+   -moz-border-radius:5px;
+}
+#infoStation {
+   color: black;
+   border-radius:5px;
+   -webkit-border-radius:5px;
+   -moz-border-radius:5px;
+	font-size: 13px;
+	overflow: auto;
+	max-height: 380px;
+}
+#itineraire {
+   font-size: 12px;
+   border-radius:5px;
+   -webkit-border-radius:5px;
+   -moz-border-radius:5px;
+}
+
+.itineraire {
+   width: 50px;
+   color: black;
+}
+
+.tableInscription {
+   color: black;
+   width: 400px;
+   text-align: center;
+}
+.tdInscription {
+   color: black;
+   text-align: left;
+   width: 200px;
+   border-bottom:0pt solid white;
+}
+
+i {
+   color: black;
+   font-size: 11px;
+}
+
+a:link    {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover   {
+    color: blue;
+}
+
+a:active  {
+    color: white;
+}
+
+ul {
+   background-color: white;
+   list-style-type: none;
+   font-size: 12px;
+   color: black;
+   width: 50px;
+   padding: 1px;
+    margin: 0px;
+}
+
+.tdIns {
+   color: black;
+   border-bottom:0pt solid white;
+}
+
+.tdtitre {
+   color: white;
+   border-bottom:0pt solid white;
+}
+
+.recherche {
+   font-size: 12px;
+   color: black;
+}
+.tdRech {
+   border-bottom:0pt solid white;
+}
+
+.ui-autocomplete { 
+	height: 200px; 
+	overflow-y: scroll; 
+	overflow-x: hidden;
+}
+
+
+
+
+
+
+

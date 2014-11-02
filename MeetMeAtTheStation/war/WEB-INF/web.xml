@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<servlet>
+		<servlet-name>MeetMeAtTheStation</servlet-name>
+		<servlet-class>com.navitia.MeetMeAtTheStationServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>TchatServlet</servlet-name>
+		<servlet-class>com.navitia.servlet.TchatServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>InscriptionServlet</servlet-name>
+		<servlet-class>com.navitia.servlet.InscriptionServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LineServlet</servlet-name>
+		<servlet-class>com.navitia.servlet.LineServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>StopAreaServlet</servlet-name>
+		<servlet-class>com.navitia.servlet.StopAreaServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UpdateBackendServlet</servlet-name>
+		<servlet-class>com.navitia.servlet.backend.UpdateBackendServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>TchatBackendServlet</servlet-name>
+		<servlet-class>com.navitia.servlet.backend.TchatBackendServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>MeetMeAtTheStation</servlet-name>
+		<url-pattern>/meetmeatthestation</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TchatServlet</servlet-name>
+		<url-pattern>/tchat</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>InscriptionServlet</servlet-name>
+		<url-pattern>/inscription</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LineServlet</servlet-name>
+		<url-pattern>/line</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>StopAreaServlet</servlet-name>
+		<url-pattern>/stopArea</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpdateBackendServlet</servlet-name>
+		<url-pattern>/updateBackend</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TchatBackendServlet</servlet-name>
+		<url-pattern>/tchatBackend</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>meetmeatthestation</welcome-file>
+	</welcome-file-list>
+</web-app>

@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//FR">
+<html>
+    <head>
+        <title>MeetMeAtTheSation</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        
+        <!-- Inclusion de l'API Google MAPS -->
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+        
+        <!-- Inclusion de jquery -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+        <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+        
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../css/MeetMeAtTheStation.css">
+        <link rel="stylesheet" type="text/css" href="../css/partie1.css">
+        <link rel="stylesheet" type="text/css" href="../css/partie2.css">
+        
+        <!-- Javascript -->
+        <script type="text/javascript" src="../js/script.js"></script>
+        <script type="text/javascript" src="../js/inscription.js"></script>
+        <script type="text/javascript" src="../js/menu.js"></script>
+        <script type="text/javascript" src="../js/tchat.js"></script>
+        <script type="text/javascript" src="../js/carte.js"></script>
+    </head>
+
+    <body onload="init()">
+        <noscript>
+            
+        </noscript>
+        <!-- ============================================================================= -->
+        <!-- ================================== Partie 1 ================================= -->
+        <!-- ============================================================================= -->
+        <div id="partie1">
+        <center>
+            <div id="bandeau">
+              		<label>Meet me at the station</label>
+                <div id="connexion">
+                    <table>
+                        <tr>
+                          <td class="tdConnexion">
+                             <input type="text" class="espacement" id="email" placeholder="Email" onKeyPress="if (event.keyCode == 13) connexion(null)">
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tdConnexion">
+                             <input type="password" class="espacement" id="motdepasse" placeholder="Mot de passe" onKeyPress="if (event.keyCode == 13) connexion(null)">
+                          </td>
+                          <td class="tdConnexion">
+                             <input type="submit" value="Connexion" class="inscription" onclick="javascript:connexion(null)">
+                          </td>
+                         </tr>
+                         <tr>
+                          <td class="tdConnexion" colspan="2">
+                            <a class="" href="javascript:creationCompte()">Je veux cr&eacute;er un compte !</a>
+                          </td>
+                          </tr>
+					</table>
+                </div>
+            </div>
+		 </center>
+            <center>
+                <div id="centrage" class="centrage">
+                    <div id="menu">
+                        <div id="menuTitle" onclick="javascript:f(0, null)">
+                                <label><strong>Menu</strong></label>
+                        </div>
+                        <div id="menuItem" onclick="javascript:f(1, 'infoTrain')">
+                            <label>Recherche</label>
+                            <div id="infoTrain" style="display:none">
+                                <p/>
+                                <table id="tableRecherche">
+                                    <tr>
+                                        <td class="recherche"><label>Rechercher une station</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdRech">
+                                            <div class="ui-widget">
+                                                <input type="text" id="tags" size="18" onKeyPress="if (event.keyCode == 13) recherche()">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdRech">
+                                            <input type="submit" value="Rechercher" onclick="javascript:recherche()">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdRech"><p/></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="tableResponceRecherche"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="menuItem" onclick="javascript:f(2, 'infoStation')">
+                            <label>Info Station</label>
+                            <div id="infoStation" style="display:none">
+                            </div>
+                        </div>
+                        <div id="menuItem" onclick="javascript:f(3, 'itineraire')">
+                            <label>Itinéraire</label>
+                            <div id="itineraire" style="display:none">
+                                <p/>
+                                <table>
+                                    <tr>
+                                        <td class="itineraire"><label>D&eacute;part:</label></td>
+                                        <td><label id="lblDepart"><i>clique gauche sur une station</i></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="itineraire"><label>Arriv&eacute;e:</label></td>
+                                        <td><label id="lblArrivee"><i>clique droit sur une station</i></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2"><input type="submit" value="Rechercher" onclick="javascript:calculate()"></td>
+                                    </tr>
+                                    <tr>
+                                    	<td colspan="2"><a href="javascript:reinit()">r&eacute;initialiser la carte</a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="panel"></div>
+                    <div id="map"></div>
+                </div>
+                <div id="centrageInscription" class="centrageInscription">
+                    <div id="Inscription">
+                        <table class="tableInscription" id="tableInscription">
+                            <tr>
+                                <td colspan="2" class="tdtitre"><h1>Inscription</h1></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="tdIns"><label id="InscriptionErreur"></label></td>
+                            </tr>
+                            <tr>
+                                <td class="tdInscription"><label>Nom</label></td>
+                                <td class="tdIns"><input type="text" name="nom" id="nom" onKeyPress="if (event.keyCode == 13) inscription()"/></td>
+                            </tr>
+                            <tr>
+                                <td class="tdInscription"><label>Prenom</label></td>
+                                <td class="tdIns"><input type="text" name="prenom" id="prenom" onKeyPress="if (event.keyCode == 13) inscription()"/></td>
+                            </tr>
+                            <tr>
+                                <td class="tdInscription"><label>Pseudo</label></td>
+                                <td class="tdIns"><input type="text" name="pseudo" id="pseudoI" onKeyPress="if (event.keyCode == 13) inscription()"/></td>
+                            </tr>
+                            <tr>
+                                <td class="tdInscription"><label>Email</label></td>
+                                <td class="tdIns"><input type="text" name="email" id="emailI" onKeyPress="if (event.keyCode == 13) inscription()"/></td>
+                            </tr>
+                            <tr>
+                                <td class="tdInscription"><label>Mot de passe</label></td>
+                                <td class="tdIns"><input type="password" name="motDePasse" id="motDePasseI" onKeyPress="if (event.keyCode == 13) inscription()"/></td>
+                            </tr>
+                            <tr>
+                                <td class="tdInscription"><label>Confirmer le mot de passe</label></td>
+                                <td class="tdIns"><input type="password" name="motDePasseConfirme" id="motDePasseConfirme" onKeyPress="if (event.keyCode == 13) inscription()"/></td>
+                            </tr>
+                            <tr>
+                                <td class="tdIns"><p></p></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="tdIns"><input type="submit" value="Je m'inscris !" onclick="javascript:inscription()"/></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="tdIns"><a href="javascript:annulerCompte()">Annuler</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </center>
+        </div>
+        
+        <!-- ============================================================================= -->
+        <!-- ================================== Partie 2 ================================= -->
+        <!-- ============================================================================= -->      
+        <div id="partie2">
+            <center>
+                <div id="tchatContainer"></div>
+            </center>
+        </div>
+    </body>
+</html>

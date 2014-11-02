@@ -1,0 +1,87 @@
+/* ============================================================================== */
+/* ================================== Partie 2 ================================== */
+/* ============================================================================== */
+#partie2 {
+	height: 500px;
+	width: 100%;
+	background-color: #A9D0F5;
+}
+
+#tchatContainer {
+	width:1000px;
+	margin-top: 10px;
+	!border:1px solid #DDD;
+}
+#tchatTitle  {
+	background-color: #BDBDBD;
+	color: white;
+	font-size: 30px;
+	width:1000px;
+	height: 35px;
+	margin-bottom: 5px;
+	border:1px solid #DDD;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
+#aTchatRoom {
+	background-color: #D8D8D8;
+	color: black;
+	font-size: 15px;
+	width:1000px;
+	min-height: 25px;
+	padding-top: 5px;
+	border:1px solid gray;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
+.tchat {
+	width: 1000px;
+	!min-height: 50px;
+	!max-height: 100px;
+	height: 300px;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
+
+#discussion {
+	color: black;
+	!background-color: white;
+	width: 99%;
+	height: 240px;
+	overflow: auto;
+	border:2px solid gray;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
+table {
+	width: 100%;
+	color: white;
+}
+td {
+    border-bottom:1pt solid gray;
+	color: black;
+}
+table.tr.td {
+	text-align: left;
+	color: black;
+}
+
+#pseudo {
+	!color: blue;
+	width: 200px;
+}
+
+#saisi {
+	width:99%;
+	height: 35px;
+	padding-top:10px;
+	border:2px solid gray;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
+			

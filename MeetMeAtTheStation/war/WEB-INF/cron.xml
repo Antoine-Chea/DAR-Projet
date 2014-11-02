@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+  <cron>
+    <url>/updateBackend</url>
+    <description>Mise a jour des tables Line et StopArea</description>
+    <schedule>every 1 minutes</schedule>
+    <timezone>Europe/Paris</timezone>
+  </cron>
+  <cron>
+    <url>/tchatBackend</url>
+    <description>Suppression automatique de tout le contenue des tchats</description>
+    <schedule>every day 00:00</schedule>
+    <timezone>Europe/Paris</timezone>
+  </cron>
+</cronentries>
